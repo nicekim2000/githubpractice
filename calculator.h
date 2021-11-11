@@ -17,6 +17,14 @@ public:
 	{
 		return x1 - x2;
 	}
+	float mul(float x1, float x2)
+	{
+		return x1 * x2;
+	}
+	float div(float x1, float x2)
+	{
+		return x1 / x2;
+	}
 };
 
 #endif 

@@ -23,6 +23,13 @@ int main(void)
 		case '-':
 			cout << x1 << " - " << x2 << " = " << cal->minus(x1, x2) << endl;
 			break;
+					//곱셈과 나눗셈 추가
+		case '*':
+			cout << x1 << " * " << x2 << " = " << cal->mul(x1, x2) << endl;
+			break;
+		case '/':
+			cout << x1 << " / " << x2 << " = " << cal->div(x1, x2) << endl;
+			break;
 		default:
 			cout << "연산자 입력 오류 !" << endl;
 		}
