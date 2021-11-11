@@ -13,7 +13,7 @@ int main(void)
 		cin >> x1;
 		cout << "x2 : ";
 		cin >> x2;
-		cout << "연산자를 입력하세요 (현재 +,- 가능) : " ;
+		cout << "연산자를 입력하세요 (현재 +,-,*,/가능) : " ;
 		cin >> op;
 		switch (op)
 		{
@@ -23,12 +23,22 @@ int main(void)
 		case '-':
 			cout << x1 << " - " << x2 << " = " << cal->minus(x1, x2) << endl;
 			break;
-					//곱셈과 나눗셈 추가
 		case '*':
 			cout << x1 << " * " << x2 << " = " << cal->mul(x1, x2) << endl;
 			break;
 		case '/':
-			cout << x1 << " / " << x2 << " = " << cal->div(x1, x2) << endl;
+			//나눗셈 예외처리
+			try
+			{
+				if (x2 == 0) throw x2;
+
+				cout << x1 << " / " << x2 << " = " << cal->div(x1, x2) << endl;
+			}
+			catch (float x2)
+			{
+				cout << "[error]" << endl;
+				cout << "0으로 나누면 안됩니다. x2 : " << x2 << endl;
+			}
 			break;
 		default:
 			cout << "연산자 입력 오류 !" << endl;
